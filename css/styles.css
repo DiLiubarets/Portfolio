@@ -109,6 +109,10 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
 }
+ul, li {
+  
+  color: var(--clr-grey-5);
+}
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;
@@ -181,6 +185,7 @@ p {
 .section-title {
   margin-bottom: 4rem;
   text-align: center;
+  
 }
 .bg-grey {
   background: var(--clr-grey-10);
