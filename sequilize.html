@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DiLiubarets.com</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="./fontawesome-free-5.12.1-web/css/all.min.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="nav" id="nav">
+        <div class="nav-center">
+            <!-- nav header -->
+            <div class="nav-header">
+                <img src="./images/logo-with-tanasprent-background-2 copy 2.png" class="nav-logo" alt="nav logo" />
+                <button class="nav-btn" id="nav-btn">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <!-- nav-links -->
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">home</a>
+                </li>
+                <li>
+                    <a href="about.html">about</a>
+                </li>
+                <li>
+                    <a href="projects.html">projects</a>
+                </li>
+                <li>
+                    <a href="contact.html">contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- end of navbar -->
+    <!-- sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <img src="./images/logo-with-tanasprent-background-2 copy 2.png" style="width: 30%;" alt="nav logo" />
+        <div>
+            <button class="close-btn" id="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <!-- nav-links -->
+            <ul class="sidebar-links">
+                <li>
+                    <a href="index.html">home</a>
+                </li>
+                <li>
+                    <a href="about.html">about</a>
+                </li>
+                <li>
+                    <a href="projects.html">projects</a>
+                </li>
+                <li>
+                    <a href="contact.html">contact</a>
+                </li>
+            </ul>
+            <!-- social icons -->
+            <ul class="social-icons">
+                <li>
+                    <a href="https://www.facebook.com/diana.liubarets" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="www.linkedin.com/in/diliubarets" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/DiLiubarets" class="social-icon"><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/di_liubarets/" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!-- end of sidebar -->
+    <section class="section single-page">
+        <div class="section-title">
+            <h2> Sequelize.js </h2>
+            <div class="underline"></div>
+        </div>
+        <div class="section-center">
+            <p> Are you new to SQL or databases in general? This prompted the emergence of Object Relational Mappers
+                (ORMs) to make the management of databases easier. Just as the name implies, they automatically map out
+                the objects from our code in a relational database. Sequelize is indeed a popular ORM created for
+                Node.js, and in this post, we'll be looking at Sequelize.js holistically, what it does and how to work
+                with sequelize.js. But quickly before then, let's examine what an ORM is.
+            </p>
+            <strong>What is an ORM?</strong>
+            <p>
+                Object Relational Mapping(ORM) is a technique that maps software objects to database tables. This
+                technique lets you query and manipulates data from a database using an object-oriented paradigm,
+                providing us with a programmatic way to connect our code to the database and control the persisted data,
+                that way, we can focus more on the business logic and less on error-prone SQL. ORM helps developers to
+                interact with objects instead of having actually to write any database queries.
+
+            </p>
+            <p>
+                One prime merit of ORM is its ability to support multiple databases, which include Postgres, MySQL,
+                SQLite, and others. Unlike raw queries where moving applications to a different database has
+                complexities, as the questions will have to be re-written. An ORM automatically switches the database
+                when a value is tweaked in the configuration file. As earlier stated, Sequelize is a popular ORM. Let's
+                dive in to explore how it is and how it works.
+            </p>
+            <p>Sequelize is well known as a promise-based ORM for Node.js and io.js. Sequelize supports the
+                following dialects; PostgreSQL, MySQL, MariaDB, SQLite, and MSSQL and features reliable transaction
+                support, relations, read replication, and more. Although there are several other Node ORM's, this
+                spectacular ORM has thousands of GitHub stars and is used by tons of applications and can be traced far
+                back to 2011 this unwavering existence has endeared it to its users. Sequelize is also distinctively
+                structured with Multiple features that go on to include; queries, scopes, migration s, relations,
+                transactions, raw queries, read replication, with loads of others.</p>
+
+            <strong>Installation of sequelize:</strong>
+            <p>
+            <ul>
+                <li>$ npm i sequelize # This will install v6 </li>
+                <li>$ npm i pg pg-hstore # Postgres </li>
+                <li>$ npm i mysql2</li>
+                <li>$ npm i mariadb</li>
+                <li>$ npm i sqlite3</li>
+                <li>$ npm i tedious # Microsoft SQL server</li>
+            </ul>
+            </p>
+            <strong>Connecting to a database:</strong>
+            <code>
+                <br/>
+                const { Sequelize } = require('sequelize');
+                <br/>
+                // Option 1: Passing a connection URI
+                const sequelize = new Sequelize('sqlite::memory:') 
+                <br/>// Example for sqlite
+                const sequelize = new Sequelize('postgres://user:pass@example.com:5432/dbname') 
+                <br/>// Example for postgres
+                <br/>
+                // Option 2: Passing parameters separately (sqlite)
+                <br/>
+                const sequelize = new Sequelize({
+                  dialect: 'sqlite',
+                  storage: 'path/to/database.sqlite'
+                });
+                <br/>
+                // Option 2: Passing parameters separately (other dialects)
+                <br/>const sequelize = new Sequelize('database', 'username', 'password', 
+                <br/>{
+                  localhost: 'localhost',
+                  dialect: one of 'mysql' | 'mariadb' | 'postgres' | 'mssql'});
+            </code>
+
+            <h3 style="text-align: center;"> </h3>
+            <img src="" alt="">
+            <p> </p>
+        </div>
+    </section>
+    <footer class="footer">
+        <!-- social icons -->
+        <ul class="social-icons">
+            <li>
+                <a href="https://www.facebook.com/diana.liubarets" class="social-icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </li>
+            <li>
+                <a href="www.linkedin.com/in/diliubarets" class="social-icon">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/DiLiubarets" class="social-icon"><i class="fab fa-github"></i></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/di_liubarets/" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+
+        <p>&copy; <span id="date"></span> Di Liubarets</p>
+    </footer>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
