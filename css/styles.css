@@ -88,7 +88,7 @@ h2,
 h3,
 h4 {
   letter-spacing: var(--spacing);
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   line-height: 1.25;
   margin-bottom: 0.75rem;
   font-family: var(--ff-primary);
@@ -802,6 +802,7 @@ Footer
   place-items: center;
 }
 .footer .social-icons {
+  place-items:center ;
   margin-bottom: 2rem;
 }
 .footer .social-icon {
@@ -811,6 +812,7 @@ Footer
   color: var(--clr-primary-10);
 }
 .footer p {
+  place-items:center ;
   font-size: 1.25rem;
   text-transform: capitalize;
 }
@@ -900,6 +902,5 @@ Products Page
   grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   gap: 3rem 1rem;
 }
-
 
 
