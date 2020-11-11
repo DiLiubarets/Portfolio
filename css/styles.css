@@ -829,7 +829,7 @@ Single Page
   max-width: 700px;
 }
 .page-info a {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: var(--clr-primary-5);
   -webkit-transition: var(--transition);
   transition: var(--transition);
