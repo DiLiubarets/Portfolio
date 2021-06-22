@@ -358,6 +358,9 @@ Hero
 ===============
 */
 /* underline added to globals */
+.hero{
+  margin-top: -10em;
+}
 .hero .underline {
   margin-bottom: 0.5rem;
   margin-left: 0;
@@ -399,7 +402,7 @@ Hero
     height: 100%;
     border: 0.25rem solid var(--clr-primary-5);
     top: 2rem;
-    right: -2rem;
+    right: -3rem;
     border-radius: var(--radius);
   }
 }
