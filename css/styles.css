@@ -376,7 +376,7 @@ Hero
   display: grid;
   place-items: center;
 }
-.hero-info h4 {
+.hero-info h4{
   color: var(--clr-grey-5);
 }
 .hero-icons {
