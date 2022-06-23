@@ -346,11 +346,11 @@ Sidebar
   border: transparent;
   -webkit-transition: var(--transition);
   transition: var(--transition);
-  color: #bb2525;
+  color: var(--clr-grey-1);
   cursor: pointer;
 }
 .close-btn:hover {
-  color: #e66b6b;
+  color: var( --clr-primary-6);
 }
 /*
 =============== 
